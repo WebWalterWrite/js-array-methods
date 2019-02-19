@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
+    <link rel="icon" href="ea-logo.png"type="image/png" />
+    <title>ArrayMethods by EA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
     
@@ -19,66 +20,84 @@
           javascript. Prenons en exemple un tableau contenant des noms de villes
           US.
         </p>
-        <p>
-          const CityOfUs = ["New York", "Miami", "Los Angeles", "Chicago",
-          "Washington"]
-        </p>
 
     <div class="_section">
 
         <section>
+          <div class="_fn">
           <!-- Array.map -->
           <h2>Array.map</h2>
           <h3>Afficher toutes les Villes</h3>
           <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement</p>
           <button id="_cities_btn">Afficher villes</button>
           <button id="_cities_clear">clear</button>
-
           <ul id="_allCity"></ul>
+          </div>
+          <div class="_img">
+            <img src="./city.png" alt="array city">
+          </div>
         </section>
 
 
         <!-- Array.find -->
         <section>
-          <h2>Array.find</h2>
-          <h3>Afficher une ville précise</h3>
-          <p>Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
+          <div class="_fn">
 
-          <input name="city" type="text" placeholder="city name" value="" />
-
-          <button id="_city_btn">afficher</button>
-          <p id="_oneCity"></p>
+            <h2>Array.find</h2>
+            <h3>Afficher une ville précise</h3>
+            <p>Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
+            
+            <input name="city" type="text" placeholder="city name" value="" />
+            
+            <button id="_city_btn">afficher</button>
+            <p id="_oneCity"></p>
+          </div>
+          <div class="_img">
+          <img src="./city.png" alt="array city" width="300">
+          </div>
         </section>
 
 
          <!-- Array.filter -->
         <section>
+          <div class="_fn">
+
             <h2>Array.filter</h2>
             <h3>Filtrer les villes par population</h3>
             <p>Retourne un nouveau tableau contenant les éléments filtrés.</p>
             <div class="_choice">
-            <!-- ville jusqu'à 500.000 -->
+              <!-- ville jusqu'à 500.000 -->
               <div data-int="500000" class="_city_data">
-                - de 500.000
+                moins de 500.000
               </div>
-            <!-- ville entre 500.000 & 1.000.000 -->
+              <!-- ville entre 500.000 & 1.000.000 -->
               <div data-int="500000, 1000000" class="_city_data">
                 entre 500.000 et 1.000.000
               </div>
-            
-            <!-- ville entre 1.000.000 et 3.000.000 -->
+              
+              <!-- ville entre 1.000.000 et 3.000.000 -->
               <div data-int="1000000, 3000000" class="_city_data">
                 entre 1.000.000 et 3.000.000
               </div>
-            
-            <!-- ville + de 3.000.000 -->
+              
+              <!-- ville + de 3.000.000 -->
               <div data-int="3000000" class="_city_data">
-                + de 3.000.000
+                plus de 3.000.000
               </div>
-            <!-- liste des villes peuplées -->
-            </div>
-            <ul id="_listCity"></ul>
-        </section>
+
+             </div>
+
+
+             <!-- liste des villes peuplées -->
+             <div id="_arrpop"></div>
+
+          </div>
+
+          <div class="_img">
+           <img src="./citypop.png" alt="array city" width="300">
+          </div>
+
+          </section>
 
     </div>
     </main>
