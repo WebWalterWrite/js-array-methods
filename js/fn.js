@@ -1,4 +1,4 @@
-import { UpperCaseFirstLetterEachWord } from './utils.js';
+import { UpperCaseFirstLetterEachWord, Tableau } from './utils.js';
 import { UsCity, UsCityData } from './data.js';
 
 let content;
@@ -32,11 +32,13 @@ export const ClearCities = () => {
 
 // Afficher liste des villes selon la population
 export const MostPopulateCities = (value) => {
+    console.log(value)
     let city;
-    content = document.querySelector('#_listCity');
-    content.innerHTML ="";
+    const table = document.querySelector('#_arrpop');
+  
 
-    const arr = value.trim().split(",");
+    // convert to array
+    const arr = value.trim().split(',');
 
     switch (arr.length){
         
@@ -45,9 +47,9 @@ export const MostPopulateCities = (value) => {
 
             city = pop  === 3000000 
                         ? UsCityData.filter(({ population }) => population > pop)
-                        : pop === 500000 && UsCityData.filter(({ population }) => population < pop)
+                        : pop === 500000 && UsCityData.filter(({ population }) => population < pop);
 
-        return city.map( ({ city, population }) => content.innerHTML += `<li>${city} : ${population} habitants</li>` );
+            return table.innerHTML=Tableau(city);
 
         case 2 :
             const pop1 = parseInt(arr[0]);
@@ -55,8 +57,7 @@ export const MostPopulateCities = (value) => {
 
             city = pop1 === 500000 && pop2 === 1000000
                 ? UsCityData.filter(({ population }) => population > pop1 && population < pop2 + 1)
-                : ""
-
-             return city.map(({ city, population }) => content.innerHTML += `<li>${city} : ${population} habitants</li>`);
+                : null;
+            return table.innerHTML = Tableau(city)
     }   
 }
