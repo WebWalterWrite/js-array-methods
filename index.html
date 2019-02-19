@@ -6,8 +6,8 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
+    
   </head>
-  <body>
     <header>
       <img src="./ea-logo.png" alt="logo blog" width="100" />
     </header>
@@ -24,33 +24,38 @@
           "Washington"]
         </p>
 
+    <div class="_section">
+
         <section>
           <!-- Array.map -->
-          <h2>Array.map => Afficher toutes les Villes :</h2>
-
+          <h2>Array.map</h2>
+          <h3>Afficher toutes les Villes</h3>
+          <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement</p>
           <button id="_cities_btn">Afficher villes</button>
+          <button id="_cities_clear">clear</button>
 
           <ul id="_allCity"></ul>
         </section>
 
+
+        <!-- Array.find -->
         <section>
-          <!-- Array.find -->
-          <h2>Array.find => Afficher une ville précise</h2>
+          <h2>Array.find</h2>
+          <h3>Afficher une ville précise</h3>
+          <p>Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
 
           <input name="city" type="text" placeholder="city name" value="" />
 
           <button id="_city_btn">afficher</button>
           <p id="_oneCity"></p>
-          </section>
-          <!-- Array.filter -->
+        </section>
 
-          <section>
-            <h2>
-              Array.filter => Retourne une ou plusieurs villes selon un filtre
-            </h2>
 
+         <!-- Array.filter -->
+        <section>
+            <h2>Array.filter</h2>
             <h3>Filtrer les villes par population</h3>
-
+            <p>Retourne un nouveau tableau contenant les éléments filtrés.</p>
             <div class="_choice">
             <!-- ville jusqu'à 500.000 -->
               <div data-int="500000" class="_city_data">
@@ -73,8 +78,10 @@
             <!-- liste des villes peuplées -->
             </div>
             <ul id="_listCity"></ul>
-      </section>
-      <script src="index.js" type="module"></script>
+        </section>
+
+    </div>
     </main>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>
