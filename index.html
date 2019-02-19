@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./ea-logo.png" alt="logo blog" width="100" />
+    </header>
+
+    <main>
+      <h1>Array Methods Tutorial</h1>
+        <p>
+          Les principales méthodes utilisées pour exploiter un Array en
+          javascript. Prenons en exemple un tableau contenant des noms de villes
+          US.
+        </p>
+        <p>
+          const CityOfUs = ["New York", "Miami", "Los Angeles", "Chicago",
+          "Washington"]
+        </p>
+
+        <section>
+          <!-- Array.map -->
+          <h2>Array.map => Afficher toutes les Villes :</h2>
+
+          <button id="_cities_btn">Afficher villes</button>
+
+          <ul id="_allCity"></ul>
+        </section>
+
+        <section>
+          <!-- Array.find -->
+          <h2>Array.find => Afficher une ville précise</h2>
+
+          <input name="city" type="text" placeholder="city name" value="" />
+
+          <button id="_city_btn">afficher</button>
+          <p id="_oneCity"></p>
+          </section>
+          <!-- Array.filter -->
+
+          <section>
+            <h2>
+              Array.filter => Retourne une ou plusieurs villes selon un filtre
+            </h2>
+
+            <h3>Filtrer les villes par population</h3>
+
+            <div class="_choice">
+            <!-- ville jusqu'à 500.000 -->
+              <div data-int="500000" class="_city_data">
+                - de 500.000
+              </div>
+            <!-- ville entre 500.000 & 1.000.000 -->
+              <div data-int="500000, 1000000" class="_city_data">
+                entre 500.000 et 1.000.000
+              </div>
+            
+            <!-- ville entre 1.000.000 et 3.000.000 -->
+              <div data-int="1000000, 3000000" class="_city_data">
+                entre 1.000.000 et 3.000.000
+              </div>
+            
+            <!-- ville + de 3.000.000 -->
+              <div data-int="3000000" class="_city_data">
+                + de 3.000.000
+              </div>
+            <!-- liste des villes peuplées -->
+            </div>
+            <ul id="_listCity"></ul>
+      </section>
+      <script src="index.js" type="module"></script>
+    </main>
+  </body>
+</html>
