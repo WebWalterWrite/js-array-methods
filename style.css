@@ -1,5 +1,7 @@
 *{
   box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 body {
   background-color: black;
@@ -13,13 +15,29 @@ body {
 }
 
 section {
-  width: 40%;
+  width: 50%;
   margin: 1em 0 1em 0;
   color: #54b7ec;
   border: solid 2px white;
   padding: 1em;
+  display:flex;
+}
+._fn{
+  width:70%;
 }
 
+._img{
+  width:30%;
+}
+
+section img{
+  width:100%;
+  padding:10px;
+  height:100%;
+}
+h1,h2,h3,p{
+  margin:1em 0 1em 0;
+}
 h1 {
   color: #ffffff;
   text-align: center;
@@ -28,7 +46,7 @@ h2{
   background-color:#eb612b;
   color:#FFFFFF;
   text-align:center;
-  width:20%;
+  width:40%;
   padding:.1em;
 }
 h3 {
@@ -44,9 +62,10 @@ button {
   background-color: #54b7ec;
   padding: 0.5em;
   font-size: 0.8em;
-  color: #ffffff;
+  color: #ffffff; 
   outline: none;
 }
+
 input {
   padding: 0.5em;
   font-size: 0.8em;
@@ -54,16 +73,48 @@ input {
 
 ._choice {
   display: flex;
+  justify-content: space-between;
+  margin: 1em 0 1em 0;
 }
 ._choice div {
-  padding: 8px;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  padding: 4px;
   background-color: #54b7ec;
-  margin: 10px;
-  text-align: center;
   color:#FFFFFF;
-  margin:0 auto;
+  font-size:18px;
+  width:20%;
+  cursor: pointer;
 }
 
 li {
   list-style-type: none;
+  font-size:22px;
 }
+
+table {
+    border-collapse: collapse;
+    border: 2px solid #FFFFFF;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    width:100%;
+    margin: 0 auto;
+
+}
+
+thead{
+  background-color: #FFFFFF;
+}
+thead>tr td{
+border: 1px solid #54b7ec;
+}
+td,
+th {
+    border: 1px solid #FFFFFF;
+    padding: 5px 10px;
+}
+tbody tr>td{
+  width:70%;
+}
+
