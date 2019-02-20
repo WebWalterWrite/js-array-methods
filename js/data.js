@@ -41,3 +41,33 @@ export const UsCityData = [
       population:"216995"
   }
 ];
+
+
+export const Clothings = [
+    {
+        product:"👕",
+        price: 9.99,
+        name: 'Tee-Shirt'
+    },
+    {
+        product:"👟",
+        price: 80,
+        name: 'Running Shoe'
+    },
+    {
+        product:"👖",
+        price: 39.99,
+        name: 'Jeans'
+    },
+    {
+        product:"🧢",
+        price: 12,
+        name: 'Casquette'
+    },
+    {
+        product:"🎒",
+        price: 29.99,
+        name: 'BackPack'
+    },
+
+]
