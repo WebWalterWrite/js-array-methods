@@ -20,10 +20,11 @@ export const Tableau = arr => {
 
     const table = 
     `<table>
+    <caption>* Estimation 2017</caption>
         <thead>
             <tr>
                 <td>Ville</td>
-                <td>Population</td>          
+                <td>Population*</td>          
             </tr>
         </thead>
         <tbody>
