@@ -1,3 +1,20 @@
+
+@keyframes fadeIn {
+  from{
+    opacity:0;
+  }
+
+  50%{
+    opacity: .3;
+  }
+  70%{
+    opacity:.6;
+  }
+  to{
+    opacity:1;
+  }
+};
+
 *{
   box-sizing: border-box;
   margin:0;
@@ -15,7 +32,7 @@ body {
 }
 
 section {
-  width: 50%;
+  width: 60%;
   margin: 1em 0 1em 0;
   color: #54b7ec;
   border: solid 2px white;
@@ -118,3 +135,25 @@ tbody tr>td{
   width:70%;
 }
 
+caption {
+  padding: 10px;
+  caption-side: bottom;
+  font-size:10px;
+  color:white;
+}
+
+._arrpop{
+  opacity:0;
+}
+
+._show_arrpop {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out; 
+};
+
+
+/* array reduce */
+section ._clothing{
+  display:flex !important; 
+  color:#FFFFFF;
+}
