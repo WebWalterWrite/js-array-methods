@@ -1,5 +1,5 @@
 import { UpperCaseFirstLetterEachWord, Tableau } from './utils.js';
-import { UsCity, UsCityData } from './data.js';
+import { UsCity, UsCityData, Clothings } from './data.js';
 
 let content;
 // Afficher une ville précise
@@ -32,32 +32,49 @@ export const ClearCities = () => {
 
 // Afficher liste des villes selon la population
 export const MostPopulateCities = (value) => {
-    console.log(value)
-    let city;
-    const table = document.querySelector('#_arrpop');
-  
+   
+    let city; // conteneur villes
 
-    // convert to array
-    const arr = value.trim().split(',');
+    const table = document.querySelector('#_arrpop'); // Element Html conteneur
+   
+    const arr = value.trim().split(','); // convert to array
+
+    table.classList.add('_show_arrpop');
 
     switch (arr.length){
-        
         case 1 :
             const pop = parseInt(arr[0]);
 
             city = pop  === 3000000 
                         ? UsCityData.filter(({ population }) => population > pop)
                         : pop === 500000 && UsCityData.filter(({ population }) => population < pop);
-
-            return table.innerHTML=Tableau(city);
+        break;
 
         case 2 :
             const pop1 = parseInt(arr[0]);
             const pop2 = parseInt(arr[1]);
 
             city = pop1 === 500000 && pop2 === 1000000
-                ? UsCityData.filter(({ population }) => population > pop1 && population < pop2 + 1)
-                : null;
-            return table.innerHTML = Tableau(city)
-    }   
-}
+                ? UsCityData.filter(({ population }) => population > pop1 && population < pop2 +1)
+                : pop1 === 1000000 && 3000000 && UsCityData
+                .filter( ({population}) => population > pop1 && population < pop2 +1)
+        break;
+
+        default: Tableau();
+    }
+  
+    return table.innerHTML=Tableau(city);
+};
+
+
+// affihcer la liste de vêtements.
+
+export const AllClothes = () => (
+     Clothings.map( ({product, price, name})=>(
+        `<div>
+            <p>${name}</p>
+            <div>${product}</div>
+            <p>${price} J$</p>
+        </div>`
+     )).join('') 
+)
