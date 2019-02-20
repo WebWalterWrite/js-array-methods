@@ -23,9 +23,9 @@
 
     <div class="_section">
 
+<!-- Array.map -->
         <section>
           <div class="_fn">
-          <!-- Array.map -->
           <h2>Array.map</h2>
           <h3>Afficher toutes les Villes</h3>
           <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement</p>
@@ -39,7 +39,7 @@
         </section>
 
 
-        <!-- Array.find -->
+<!-- Array.find -->
         <section>
           <div class="_fn">
 
@@ -58,13 +58,13 @@
         </section>
 
 
-         <!-- Array.filter -->
+<!-- Array.filter -->
         <section>
           <div class="_fn">
 
             <h2>Array.filter</h2>
             <h3>Filtrer les villes par population</h3>
-            <p>Retourne un nouveau tableau contenant les éléments filtrés.</p>
+            <p>Retourne un nouveau tableau contenant les éléments filtrés. On utilise généralement des opérateurs d'égalités</p>
             <div class="_choice">
               <!-- ville jusqu'à 500.000 -->
               <div data-int="500000" class="_city_data">
@@ -87,15 +87,33 @@
 
              </div>
 
-
              <!-- liste des villes peuplées -->
-             <div id="_arrpop"></div>
+             <div id="_arrpop" class="_arrpop"></div>
 
           </div>
 
           <div class="_img">
            <img src="./citypop.png" alt="array city" width="300">
           </div>
+          </section>
+
+
+
+<!-- Array reduce -->
+          <section>
+            <div class="_fn">
+              <h2>Array.reduce</h2>
+              <h3>Calculer un panier d'achat</h3>
+              <p>Selon le site MDN la méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.</p>
+              <p>Pour notre exemple, nous achetons nos vêtements en ligne et nous les ajoutons à notre panier,
+                en tant que développeur Javascript notre monnaie utilisée sera du JsCoin --J$--
+              </p>
+           
+              <!-- contains clothes -->
+              <div id="_clothing" class="_clothing">
+                  
+              </div>
+            </div>
 
           </section>
 
