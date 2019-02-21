@@ -15,7 +15,7 @@
 
     <main>
       <h1>Array Methods Tutorial</h1>
-        <p>
+        <p class="_text">
           Les principales méthodes utilisées pour exploiter un Array en
           javascript. Prenons en exemple un tableau contenant des noms de villes
           US.
@@ -28,43 +28,36 @@
           <div class="_fn">
           <h2>Array.map</h2>
           <h3>Afficher toutes les Villes</h3>
-          <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement</p>
+          <p class="_text">Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement</p>
           <button id="_cities_btn">Afficher villes</button>
           <button id="_cities_clear">clear</button>
-          <ul id="_allCity"></ul>
+          <ul id="_allCity" class="_result"></ul>
           </div>
-          <div class="_img">
-            <img src="./city.png" alt="array city">
-          </div>
+
         </section>
 
 
 <!-- Array.find -->
         <section>
-          <div class="_fn">
 
             <h2>Array.find</h2>
             <h3>Afficher une ville précise</h3>
-            <p>Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
+            <p class="_text">Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
             
             <input name="city" type="text" placeholder="city name" value="" />
             
             <button id="_city_btn">afficher</button>
             <p id="_oneCity"></p>
-          </div>
-          <div class="_img">
-          <img src="./city.png" alt="array city" width="300">
-          </div>
+
         </section>
 
 
 <!-- Array.filter -->
         <section>
-          <div class="_fn">
-
+    
             <h2>Array.filter</h2>
             <h3>Filtrer les villes par population</h3>
-            <p>Retourne un nouveau tableau contenant les éléments filtrés. On utilise généralement des opérateurs d'égalités</p>
+            <p class="_text">Retourne un nouveau tableau contenant les éléments filtrés. On utilise généralement des opérateurs d'égalités</p>
             <div class="_choice">
               <!-- ville jusqu'à 500.000 -->
               <div data-int="500000" class="_city_data">
@@ -89,23 +82,16 @@
 
              <!-- liste des villes peuplées -->
              <div id="_arrpop" class="_arrpop"></div>
-
-          </div>
-
-          <div class="_img">
-           <img src="./citypop.png" alt="array city" width="300">
-          </div>
           </section>
 
 
 
 <!-- Array reduce -->
           <section>
-            <div class="_fn">
               <h2>Array.reduce</h2>
               <h3>Calculer un panier d'achat</h3>
-              <p>Selon le site MDN la méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.</p>
-              <p>Pour notre exemple, nous achetons nos vêtements en ligne et nous les ajoutons à notre panier,
+              <p class="_text">Selon le site MDN la méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.</p>
+              <p class="_text">Pour notre exemple, nous achetons nos vêtements en ligne et nous les ajoutons à notre panier,
                 en tant que développeur Javascript notre monnaie utilisée sera du JsCoin --J$--
               </p>
            
@@ -113,7 +99,6 @@
               <div id="_clothing" class="_clothing">
                   
               </div>
-            </div>
 
           </section>
 

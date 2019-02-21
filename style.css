@@ -3,7 +3,6 @@
   from{
     opacity:0;
   }
-
   50%{
     opacity: .3;
   }
@@ -20,6 +19,7 @@
   margin:0;
   padding:0;
 }
+
 body {
   background-color: black;
   padding: 10px;
@@ -34,24 +34,11 @@ body {
 section {
   width: 60%;
   margin: 1em 0 1em 0;
-  color: #54b7ec;
   border: solid 2px white;
   padding: 1em;
-  display:flex;
-}
-._fn{
-  width:70%;
 }
 
-._img{
-  width:30%;
-}
 
-section img{
-  width:100%;
-  padding:10px;
-  height:100%;
-}
 h1,h2,h3,p{
   margin:1em 0 1em 0;
 }
@@ -70,7 +57,10 @@ h3 {
   color: #eb612b !important;
 }
 
-p {
+._result{
+  color:#54b7ec;
+}
+._text {
   color: #72db83;
   font-size: 1.2em;
 }
@@ -93,6 +83,8 @@ input {
   justify-content: space-between;
   margin: 1em 0 1em 0;
 }
+
+
 ._choice div {
   display:flex;
   align-items:center;
@@ -110,6 +102,11 @@ li {
   font-size:22px;
 }
 
+
+/*
+array.filter 
+style tableau
+*/
 table {
     border-collapse: collapse;
     border: 2px solid #FFFFFF;
@@ -142,6 +139,10 @@ caption {
   color:white;
 }
 
+/*
+array.filter 
+affichage tableau
+*/
 ._arrpop{
   opacity:0;
 }
@@ -149,11 +150,47 @@ caption {
 ._show_arrpop {
   opacity: 1;
   transition: opacity 500ms ease-in-out; 
-};
-
+}
 
 /* array reduce */
-section ._clothing{
-  display:flex !important; 
-  color:#FFFFFF;
+._clothing{
+  display:flex;
+  justify-content: space-between;
 }
+
+._clothing>div {
+  width:17%;
+  text-align:center;
+  padding:5px;
+}
+
+._product{
+  background-color: #FFFFFF;
+  padding:5px;
+}
+
+
+/* devise price */
+._devise{
+  padding:2px;
+  background-color:#EFD71B;
+  color:#000000;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  font-size:15px !important;
+}
+
+._product p{
+  margin:0;
+  font-size:14px;
+  color:#000000;
+}
+._add_cart{
+  background-color:#EFD71B;
+  margin: 3px 0 2px 0; 
+  padding:3px; 
+}
+
+
+
