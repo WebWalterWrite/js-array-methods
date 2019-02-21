@@ -19,7 +19,7 @@ export const Tableau = arr => {
     const data = arr.map( ({ city, population }) => `<tr><td>${city}</td><td>${population}</td></tr>`).join("")
 
     const table = 
-    `<table>
+    `<table class="_result">
     <caption>* Estimation 2017</caption>
         <thead>
             <tr>

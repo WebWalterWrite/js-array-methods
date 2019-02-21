@@ -71,10 +71,17 @@ export const MostPopulateCities = (value) => {
 
 export const AllClothes = () => (
      Clothings.map( ({product, price, name})=>(
-        `<div>
-            <p>${name}</p>
-            <div>${product}</div>
-            <p>${price} J$</p>
-        </div>`
+    `
+<div>
+    <div class="_product">
+        <p>${name}</p>
+        <div>
+            <span role="img" aria-label=${name}>${product}</span>
+        </div>
+        <p>${price}<span class="_devise">J$</span></p>
+    </div>
+    <div class="_add_cart">add to cart</div>
+</div>   
+        `
      )).join('') 
 )

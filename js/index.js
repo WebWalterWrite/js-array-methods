@@ -19,4 +19,5 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Array reduce
   clothing_contains.innerHTML= AllClothes();
+  console.log(AllClothes())
 });
