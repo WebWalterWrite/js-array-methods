@@ -68,9 +68,7 @@ export const MostPopulateCities = (value) => {
 };
 
 
-// affihcer la liste de vêtements.
-
-
+// afficher la liste de vêtements.
 export const AllClothes = () => (
 
      Clothings.map( ({product, price, name, id})=>(
@@ -79,7 +77,7 @@ export const AllClothes = () => (
     <div class="_product">
         <p>${name}</p>
         <div>
-            <span role="img" aria-label=${name}>${product}</span>
+            <span class="_emoji" role="img" aria-label=${name}>${product}</span>
         </div>
         <p>${price} J$</p>
     </div>
@@ -88,3 +86,27 @@ export const AllClothes = () => (
         `
      )).join('')
 );
+
+
+// ajouter au panier
+
+export const AddToCart = idProduct => {
+
+   let arrayOfProducts = localStorage.getItem('cart') 
+                        ? JSON.parse(localStorage.getItem('cart'))
+                        : [];
+
+   const product = Clothings.find( p => p.id === parseInt(idProduct));
+    
+   arrayOfProducts.push(product);
+
+   localStorage.setItem('cart',JSON.stringify(arrayOfProducts));
+   
+   const totalCart = JSON.parse(localStorage.getItem('cart'));
+
+   content = document.querySelector('#_cart_content');
+
+  console.log(totalCart)
+  const cart = totalCart.map(({product, name}) => `<span class="_emoji" role="img" aria-label=${name}>${product}</span>`).join('+');
+  content.innerHTML= cart;
+}
