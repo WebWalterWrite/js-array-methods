@@ -1,4 +1,4 @@
-import { OneCity, AllCities, ClearCities, MostPopulateCities, AllClothes } from './fn.js';
+import { OneCity, AllCities, ClearCities, MostPopulateCities, AllClothes, AddToCart } from './fn.js';
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -17,7 +17,8 @@ window.addEventListener("DOMContentLoaded", () => {
   
   [...city_data].map(el => el.addEventListener('click', () => MostPopulateCities(el.dataset.int)));
 
-  document.body.addEventListener('click', (el) => el.target.dataset.id && console.log(el.target))
+// Ecouter click event sur boutton add to cart
+  document.body.addEventListener('click', el => el.target.dataset.id && AddToCart(el.target.dataset.id))
   
   // Array reduce
   clothing_contains.innerHTML= AllClothes();
