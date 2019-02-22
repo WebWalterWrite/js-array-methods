@@ -1,6 +1,6 @@
 import { OneCity, AllCities, ClearCities, MostPopulateCities, AllClothes } from './fn.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
 
 // identifier elem
   const cities_btn = document.querySelector("#_cities_btn");
@@ -15,9 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   city_btn.addEventListener('click', () => OneCity(city_input.value));
   
-  [...city_data].map(el => el.addEventListener('click', () => MostPopulateCities(el.dataset.int)))
+  [...city_data].map(el => el.addEventListener('click', () => MostPopulateCities(el.dataset.int)));
+
+  document.body.addEventListener('click', (el) => el.target.dataset.id && console.log(el.target))
   
   // Array reduce
   clothing_contains.innerHTML= AllClothes();
-  console.log(AllClothes())
+
+
+  
+
+
 });

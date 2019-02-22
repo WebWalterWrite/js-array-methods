@@ -44,27 +44,32 @@ export const UsCityData = [
 
 
 export const Clothings = [
-    {
+    {   
+        id:1,
         product:"👕",
         price: 9.99,
         name: 'Tee-Shirt'
     },
     {
+        id:2,
         product:"👟",
         price: 80,
         name: 'Running Shoe'
     },
     {
+        id:3,
         product:"👖",
         price: 39.99,
         name: 'Jeans'
     },
     {
+        id:4,
         product:"🧢",
         price: 12,
         name: 'Casquette'
     },
     {
+        id:5,
         product:"🎒",
         price: 29.99,
         name: 'BackPack'

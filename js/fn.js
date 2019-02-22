@@ -30,6 +30,7 @@ export const ClearCities = () => {
 };
 
 
+
 // Afficher liste des villes selon la population
 export const MostPopulateCities = (value) => {
    
@@ -69,8 +70,10 @@ export const MostPopulateCities = (value) => {
 
 // affihcer la liste de vêtements.
 
+
 export const AllClothes = () => (
-     Clothings.map( ({product, price, name})=>(
+
+     Clothings.map( ({product, price, name, id})=>(
     `
 <div>
     <div class="_product">
@@ -78,10 +81,10 @@ export const AllClothes = () => (
         <div>
             <span role="img" aria-label=${name}>${product}</span>
         </div>
-        <p>${price}<span class="_devise">J$</span></p>
+        <p>${price} J$</p>
     </div>
-    <div class="_add_cart">add to cart</div>
+    <button data-id=${id} class="_add_cart">add to cart</button>
 </div>   
         `
-     )).join('') 
-)
+     )).join('')
+);
