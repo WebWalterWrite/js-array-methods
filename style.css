@@ -176,7 +176,7 @@ affichage tableau
   padding:15px;
 }
 
-._product span{
+._emoji{
   font-size:40px;
 }
 
@@ -213,4 +213,17 @@ affichage tableau
 }
 
 
+/* panier  */
 
+._cart{
+  color:#FFFFFF;
+  text-align:center;
+}
+._cart span{
+  background-color:#FFFFFF;
+  padding:10px;
+  border-radius:8px;
+  margin:0 5px 0 5px;
+  vertical-align:center;
+  transition:all 1s ease-in;
+}
