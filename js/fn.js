@@ -1,4 +1,4 @@
-import { UpperCaseFirstLetterEachWord, Tableau } from './utils.js';
+import { UpperCaseFirstLetterEachWord, Tableau, setLocalStorage } from './utils.js';
 import { UsCity, UsCityData, Clothings } from './data.js';
 
 let content;
@@ -90,23 +90,21 @@ export const AllClothes = () => (
 
 // ajouter au panier
 
-export const AddToCart = idProduct => {
+export const AddToCart = (idProduct, nameStore) => {
 
-   let arrayOfProducts = localStorage.getItem('cart') 
-                        ? JSON.parse(localStorage.getItem('cart'))
-                        : [];
-
-   const product = Clothings.find( p => p.id === parseInt(idProduct));
+// recupérer le produit
+    const product = Clothings.find( p => p.id === parseInt(idProduct));
     
-   arrayOfProducts.push(product);
+// stocker dans le localstorage du navigateur
+    setLocalStorage(product, nameStore);
 
-   localStorage.setItem('cart',JSON.stringify(arrayOfProducts));
-   
-   const totalCart = JSON.parse(localStorage.getItem('cart'));
+// récupérer le contenu du local storage
+    const totalCart = JSON.parse(localStorage.getItem(nameStore));
 
-   content = document.querySelector('#_cart_content');
+    console.log(totalCart)
+    content = document.querySelector('#_cart_content');
 
-  console.log(totalCart)
-  const cart = totalCart.map(({product, name}) => `<span class="_emoji" role="img" aria-label=${name}>${product}</span>`).join('+');
-  content.innerHTML= cart;
+    const cart = totalCart.map(({product, name}) => `<span class="_emoji" role="img" aria-label=${name}>${product}</span>`).join('+');
+
+    content.innerHTML= cart;
 }

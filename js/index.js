@@ -18,13 +18,10 @@ window.addEventListener("DOMContentLoaded", () => {
   [...city_data].map(el => el.addEventListener('click', () => MostPopulateCities(el.dataset.int)));
 
 // Ecouter click event sur boutton add to cart
-  document.body.addEventListener('click', el => el.target.dataset.id && AddToCart(el.target.dataset.id))
+  document.body.addEventListener('click', el => el.target.dataset.id && AddToCart(el.target.dataset.id, 'cart'));
+  
   
   // Array reduce
   clothing_contains.innerHTML= AllClothes();
-
-
-  
-
 
 });
