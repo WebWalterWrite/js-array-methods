@@ -34,3 +34,26 @@ export const Tableau = arr => {
 
   return table;
 };
+
+
+export const setLocalStorage = (data, item) => {
+
+    data.quantity=1;
+
+    let arrayOfProducts = localStorage.getItem(item) 
+                        ? JSON.parse(localStorage.getItem(item))
+                        :[];
+
+    
+    const getStorage = JSON.parse(localStorage.getItem(item));
+
+   
+    const isProduct = getStorage && getStorage.find(({id}) => id === data.id);
+  
+    !isProduct ? arrayOfProducts.push(data) :  isProduct.quantity = 2
+               
+   
+    
+    localStorage.setItem(item, JSON.stringify(arrayOfProducts));
+
+};
