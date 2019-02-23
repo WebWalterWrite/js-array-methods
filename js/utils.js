@@ -36,24 +36,29 @@ export const Tableau = arr => {
 };
 
 
+// Persister les produits dans le localStorage.
+
 export const setLocalStorage = (data, item) => {
 
-    data.quantity=1;
+    // Créer tableau de products en fonction du localStorage
+    let arrayOfProducts = getLocalStorage(item) ? getLocalStorage(item) : [];
 
-    let arrayOfProducts = localStorage.getItem(item) 
-                        ? JSON.parse(localStorage.getItem(item))
-                        :[];
+    // Récupérer le contenu du storage
+    const getStorage = getLocalStorage(item);
 
-    
-    const getStorage = JSON.parse(localStorage.getItem(item));
+    // Si getStorage true, Vérifier si le produit est déjà présent
+    const isProduct = getStorage && getStorage.find(({ id }) => id === data.id);
 
-   
-    const isProduct = getStorage && getStorage.find(({id}) => id === data.id);
-  
-    !isProduct ? arrayOfProducts.push(data) :  isProduct.quantity = 2
-               
-   
-    
+    // Si non présent l'insérer dans le tableau
+    !isProduct && arrayOfProducts.push(data);
+
+    // Persister les données 
     localStorage.setItem(item, JSON.stringify(arrayOfProducts));
-
 };
+
+
+// Récupérer localstorage
+export const getLocalStorage = item => JSON.parse(localStorage.getItem(item));
+
+// array.reducer 
+export const Reducer = array => array.reduce( (accumulator, currentValue) => accumulator + currentValue);
