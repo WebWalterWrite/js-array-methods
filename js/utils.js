@@ -38,7 +38,7 @@ export const Tableau = arr => {
 
 // Persister les produits dans le localStorage.
 
-export const setLocalStorage = (data, item) => {
+export const persistStorage = (data, item) => {
 
     // Créer tableau de products en fonction du localStorage
     let arrayOfProducts = getLocalStorage(item) ? getLocalStorage(item) : [];
@@ -53,9 +53,12 @@ export const setLocalStorage = (data, item) => {
     !isProduct && arrayOfProducts.push(data);
 
     // Persister les données 
-    localStorage.setItem(item, JSON.stringify(arrayOfProducts));
+    setLocalStorage(item,arrayOfProducts);
 };
 
+
+// persister localstorage
+const setLocalStorage = (item, array) => localStorage.setItem(item, JSON.stringify(array));
 
 // Récupérer localstorage
 export const getLocalStorage = item => JSON.parse(localStorage.getItem(item));
