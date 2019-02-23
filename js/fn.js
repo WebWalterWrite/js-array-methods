@@ -1,4 +1,4 @@
-import { UpperCaseFirstLetterEachWord, Tableau, setLocalStorage } from './utils.js';
+import { UpperCaseFirstLetterEachWord, Tableau, setLocalStorage, getLocalStorage, Reducer } from './utils.js';
 import { UsCity, UsCityData, Clothings } from './data.js';
 
 let content;
@@ -99,12 +99,26 @@ export const AddToCart = (idProduct, nameStore) => {
     setLocalStorage(product, nameStore);
 
 // récupérer le contenu du local storage
-    const totalCart = JSON.parse(localStorage.getItem(nameStore));
+    const totalCart = getLocalStorage(nameStore);
 
-    console.log(totalCart)
     content = document.querySelector('#_cart_content');
+    const cartCount = document.querySelector('#_cart_count');
 
     const cart = totalCart.map(({product, name}) => `<span class="_emoji" role="img" aria-label=${name}>${product}</span>`).join('+');
 
     content.innerHTML= cart;
+    cartCount.textContent= totalCart.length;
 }
+
+// Calculer le panier
+
+export const SumCart = (item) => {
+
+    const price = getLocalStorage(item).map(({ price }) => price);
+
+    content = document.querySelectorAll('._cart_total div')[0];
+
+    content.textContent = `${Reducer(price).toFixed(2)} j$`;
+}
+
+
