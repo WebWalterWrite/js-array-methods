@@ -7,6 +7,8 @@
     <title>ArrayMethods by EA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
   </head>
     <header>
@@ -95,17 +97,35 @@
                 en tant que développeur Javascript notre monnaie utilisée sera du JsCoin --J$--
               </p>
            
-              <!-- contains clothes -->
-              <div id="_clothing" class="_clothing">
+              <div>
+                <h3>Articles</h3>
+                <!-- contains clothes -->
+                <div id="_clothing" class="_clothing">
                   
               </div>
-              <!-- cart products -->
-              <div>
-                <h3>panier</h3>
-                <div id="_cart_content" class="_cart">
-                  vide
-                </div>
               </div>
+              <!-- cart products -->
+           
+                <h3>Panier</h3>
+                
+                <div class="_cart_container">
+
+              <!-- total cart -->
+                  <div class="_cart_icon">
+                      <i class="fas fa-cart-arrow-down fa-3x"></i>
+                      <span id="_cart_count">0</span>
+
+                      <div class="_cart_total">
+                          <button id="_btn_total_cart">Calculer</button>
+                          <div>0 j$</div>
+                      </div>
+                  </div>
+
+              <!-- products -->
+                  <div id="_cart_content" class="_cart"></div>
+
+                </div>
+
           </section>
 
     </div>
