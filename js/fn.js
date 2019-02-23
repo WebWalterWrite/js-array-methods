@@ -1,4 +1,4 @@
-import { UpperCaseFirstLetterEachWord, Tableau, setLocalStorage, getLocalStorage, Reducer } from './utils.js';
+import { UpperCaseFirstLetterEachWord, Tableau, persistStorage, getLocalStorage, Reducer } from './utils.js';
 import { UsCity, UsCityData, Clothings } from './data.js';
 
 let content;
@@ -96,7 +96,7 @@ export const AddToCart = (idProduct, nameStore) => {
     const product = Clothings.find( p => p.id === parseInt(idProduct));
     
 // stocker dans le localstorage du navigateur
-    setLocalStorage(product, nameStore);
+    persistStorage(product, nameStore);
 
 // récupérer le contenu du local storage
     const totalCart = getLocalStorage(nameStore);
