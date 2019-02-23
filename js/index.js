@@ -1,4 +1,4 @@
-import { OneCity, AllCities, ClearCities, MostPopulateCities, AllClothes, AddToCart } from './fn.js';
+import { OneCity, AllCities, ClearCities, MostPopulateCities, AllClothes, AddToCart, SumCart } from './fn.js';
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const city_btn = document.querySelector("#_city_btn");
   const city_input = document.querySelector('input[name="city"]');
   const city_data = document.querySelectorAll('._city_data');
+  const cart_total_btn = document.querySelector('#_btn_total_cart');
 
   cities_btn.addEventListener('click', () => AllCities());
   cities_clear_btn.addEventListener('click', () => ClearCities());
@@ -23,5 +24,8 @@ window.addEventListener("DOMContentLoaded", () => {
   
   // Array reduce
   clothing_contains.innerHTML= AllClothes();
+  cart_total_btn.addEventListener('click', () => SumCart('cart') );
 
+  // clear local storage
+  localStorage.clear();
 });
