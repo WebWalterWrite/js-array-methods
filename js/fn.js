@@ -4,22 +4,25 @@ import { UsCity, UsCityData, Clothings } from './data.js';
 let content;
 // Afficher une ville précise
 export const OneCity = city => {
+    content = document.querySelector("#_oneCity");
 
+    if(city === "") return content.innerHTML='<p class="_error">Vous n\'avez rien saisi</p>';
+    
     // Traiter le texte saisi
     const value = UpperCaseFirstLetterEachWord(city.toLowerCase());
 
-    content = document.querySelector("#_oneCity");
-
     const result = UsCity.find(el => el === value);
 
-    content.innerHTML = result ? `La ville de ${result} est dans le Array` : `${city || '... vide'} n'est pas dans le Array`;
+    content.innerHTML = result ? `La ville de ${result} est dans le Array` : `${city} n'est pas dans le Array`;
 };
 
 // Afficher liste de toutes les villes
 
 export const AllCities = () => {
         content = document.querySelector("#_allCity");
+
         content.innerHTML = "";
+        
         UsCity.map(el => (content.innerHTML += `<li>${el}</li>`));
     };
 
@@ -132,7 +135,9 @@ export const displayStars = ( i = 0 ) => {
 
     content = idSelector('_stars_ctn');
     
-     i === 0 ? (content.innerHTML = arrStars.join('')) : fillStars(i, arrStars) ;
+    i === 0 
+        ? (content.innerHTML = arrStars.join('')) 
+        : content.innerHTML = fillStars(i, arrStars) ;
 
      initStars();
 
@@ -149,9 +154,7 @@ export const fillStars = ( i, array ) => {
 
     const fullStars = '<span><i class="fas fa-star fa-3x"></i></span>';
 
-    array.fill(fullStars,0, i )
-
-    content.innerHTML = array.join('');
+    return array.fill(fullStars,0, i ).join('');
 
 }
 
