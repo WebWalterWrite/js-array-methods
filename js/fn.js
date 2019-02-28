@@ -19,16 +19,18 @@ export const OneCity = city => {
 // Afficher liste de toutes les villes
 
 export const AllCities = () => {
-        content = document.querySelector("#_allCity");
+        content = idSelector("_all_cities");
 
         content.innerHTML = "";
         
-        UsCity.map(el => (content.innerHTML += `<li>${el}</li>`));
+        const fillContent = el => content.innerHTML += `<li>${el}</li>`;
+
+        UsCity.map(fillContent);
     };
 
 // Effacer la liste des villes
 export const ClearCities = () => {
-    content = document.querySelector("#_allCity");
+    content = idSelector("_all_cities");
     content.innerHTML = "";
 };
 
@@ -39,7 +41,7 @@ export const MostPopulateCities = value => {
    
     let city; // conteneur villes
 
-    const table = document.querySelector('#_arrpop'); // Element Html conteneur
+    const table = idSelector('_arrpop'); // Element Html conteneur
    
     const arr = value.trim().split(','); // convert to array
 
@@ -104,8 +106,8 @@ export const AddToCart = (idProduct, nameStore) => {
 // récupérer le contenu du local storage
     const totalCart = getLocalStorage(nameStore);
 
-    content = document.querySelector('#_cart_content');
-    const cartCount = document.querySelector('#_cart_count');
+    content = idSelector('_cart_content');
+    const cartCount = idSelector('_cart_count');
 
     const cart = totalCart.map(({product, name}) => `<span class="_emoji" role="img" aria-label=${name}>${product}</span>`).join('+');
 

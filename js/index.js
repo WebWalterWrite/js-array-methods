@@ -4,6 +4,7 @@ import { idSelector } from './utils.js';
 window.addEventListener("DOMContentLoaded", () => {
 
 // identifier elem
+
   const cities_btn = idSelector("_cities_btn");
   const cities_clear_btn = idSelector("_cities_clear");
   const clothing_contains = idSelector('_clothing')
@@ -16,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
   cities_clear_btn.addEventListener('click', () => ClearCities());
 
   city_btn.addEventListener('click', () => OneCity(city_input.value));
+  
   
   [...city_data].map(el => el.addEventListener('click', () => MostPopulateCities(el.dataset.int)));
 
