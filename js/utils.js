@@ -65,3 +65,7 @@ export const getLocalStorage = item => JSON.parse(localStorage.getItem(item));
 
 // array.reducer 
 export const Reducer = array => array.reduce( (accumulator, currentValue) => accumulator + currentValue);
+
+
+// id Selector
+export const idSelector = id => document.querySelector(`#${id}`);
