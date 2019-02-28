@@ -26,10 +26,13 @@ button{
 }
 
 body {
-  background-color: black;
+  background-color: #282C34;
   padding: 10px;
 }
 
+main>h1{
+  font-size:3em;
+}
 ._section{
  display:flex;
  flex-direction: column;
@@ -37,9 +40,11 @@ body {
 }
 
 section {
+  position :relative;
   width: 60%;
   margin: 1em 0 1em 0;
   border: solid 2px white;
+  border-radius:13px;
   padding: 1em;
 }
 
@@ -55,20 +60,37 @@ h2{
   background-color:#eb612b;
   color:#FFFFFF;
   text-align:center;
-  width:40%;
+  width:15%;
   padding:.1em;
+  position:absolute;
+  top:-40px;
+  left:-5%;
+  padding:8px;
+  border-radius: 13px;
 }
-h3 {
+h3, h4 {
   color: #eb612b !important;
+  margin-top:30px;
+}
+
+pre{
+  background-color: #F2F2F2;
+  width:90%;
+  margin: 0 auto;
+  padding:10px;
+  font-size:16px;
+  white-space: pre-line;
 }
 
 ._result{
   color:#54b7ec;
 }
-._text {
-  color: #72db83;
-  font-size: 1.2em;
+._text p, ul {
+  /* color: #72db83; */
+  color: #FFFFFF;
+  font-size: 1em;
 }
+
 
 button {
   background-color: #54b7ec;
@@ -89,12 +111,13 @@ input {
   margin: 1em 0 1em 0;
 }
 
-
-._choice div {
+._city_data {
   display:flex;
   align-items:center;
+  justify-content: center;
   text-align:center;
   padding: 4px;
+  border-radius:13px;
   background-color: #54b7ec;
   color:#FFFFFF;
   font-size:18px;
@@ -156,6 +179,7 @@ affichage tableau
   opacity: 1;
   transition: opacity 500ms ease-in-out; 
 }
+
 
 /* array reduce */
 ._clothing{
@@ -229,8 +253,10 @@ affichage tableau
   display:flex;
   align-items:center;
   border: solid 2px #FFFFFF;
+  border-bottom-color: #EFD71B;
   padding:30px;
   text-align: center;
+  border-radius: 0px 0px 13px 13px;
 }
 
 ._cart_icon{
@@ -267,7 +293,7 @@ affichage tableau
   border: solid 2px #FFFFFF;
   border-radius: 0 0 13px 13px;
   padding:3px;
-  font-size:22px;
+  font-size:1rem;
   color:#FFFFFF;
 }
 ._cart{
@@ -283,4 +309,20 @@ affichage tableau
   border-radius:8px;
   margin:0 5px 0 5px;
   border:solid 2px #EFD71B;
+}
+
+
+/* Array fill */
+
+._stars_contain{
+
+  text-align: center;
+}
+
+.fa-star{
+    color: yellow;
+}
+._stars_contain>span i{
+  margin: 0 10px 0 10px;
+  cursor: pointer;
 }
