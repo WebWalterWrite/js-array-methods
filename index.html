@@ -27,12 +27,21 @@
 
 <!-- Array.map -->
         <section>
-          <div class="_fn">
+
           <h2 class="_array_title">Array.map</h2>
           <div class="_text">
           <h3>Afficher toutes les Villes</h3>
-          <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement</p>
+          <h4>Que fait array.map ?</h4>
+          <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement<p>
+
+          <!-- exemple de code -->
+          <div class="_code_ex">
+            <p>Prenons en exemple, nous récupérons depuis une api ou notre base de données une liste de villes sous forme de tabeau</p>
+            <pre>
+            const UsCity = [ "New York", "Miami", "Los Angeles", "Chicago", "Washington"]; // Tableau city
+            </pre>
           </div>
+
           <button id="_cities_btn">Afficher villes</button>
           <button id="_cities_clear">clear</button>
           <ul id="_allCity" class="_result"></ul>
@@ -48,12 +57,12 @@
             <div class="_text">
             <h3>Afficher une ville précise</h3>
             <p>Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
-            </div>
+
             <input name="city" type="text" placeholder="city name" value="" />
             
             <button id="_city_btn">afficher</button>
             <p id="_oneCity"></p>
-
+            </div>
         </section>
 
 
@@ -123,7 +132,7 @@
 
                       <div class="_cart_total">
                           <button id="_btn_total_cart">Calculer</button>
-                          <div>0 j$</div>
+                          <div></div>
                       </div>
                   </div>
 
@@ -141,32 +150,34 @@
             <p>Cette méthode permet de modifier intégralement ou partiellement les entrées d'un  tableau</p>
             <h4>Voyons de plus près la syntaxe :</h4>
             <p>Pour l'exemple nous souhaitons donner une note entre et 1 et 5 étoiles à notre langage préféré qui est le Javascript</p>
+            <div class="_code_ex">
             <p>je crée dans un 1er temps un tableau contenant notre . ( Pour ce faire j'utilise FontAwesome)</p>
-            <pre>
-              const stars = '&lt;span>&lt;i class="far fa-star fa-3x"></i>&lt;/span>';
+              <pre>
+                const stars = '&lt;span>&lt;i class="far fa-star fa-3x"></i>&lt;/span>';
 
-              const arrStars = [...Array(5)].fill(stars); 
-            </pre> 
-            <p>Une fois ceci fait, lorsque l'on cliquera sur une des 5 étoiles, la fonction fillStars remplira le tableau selon la position cliquée.</p>
-            <ul>
-              Les arguments à transmettre à notre fonction :
-                <li>- i correspond à l'index de notre array arrStars lors du clic</li>
-                <li>- array correspond à notre array arrayStars</li>
-            </ul>
-            <p>Cette dernière créée d'abord notre étoile</i>.</p>
-            <pre>
-              const fillStars = ( i, array ) => {
-              
-              &nbsp;&nbsp;const fullStars = '&lt;span>&lt;i class="fas fa-star fa-3x">&lt;/i></span>';
-              
-              &nbsp;&nbsp;array.fill(fullStars,0, i )
-              
-              &nbsp;&nbsp;content.innerHTML = array.join('');
-              
-              }
+                const arrStars = [...Array(5)].fill(stars); 
+              </pre> 
+              <p>Une fois ceci fait, lorsque l'on cliquera sur une des 5 étoiles, la fonction fillStars remplira le tableau selon la position cliquée.</p>
+              <p>Les arguments à transmettre à notre fonction :</p>
+              <ul>
+                  <li>- <em>i</em> correspond à l'index de notre array arrStars lors du clic</li>
+                  <li>- <em>array</em> correspond à notre array arrayStars</li>
+              </ul>
+              <p>Cette dernière créée d'abord notre étoile</i>.</p>
+              <pre>
+                const fillStars = ( i, array ) => {
+                
+                &nbsp;&nbsp;const fullStars = '&lt;span>&lt;i class="fas fa-star fa-3x">&lt;/i>&lt;/span>';
+                
+                &nbsp;&nbsp;array.fill(fullStars,0, i )
+                
+                &nbsp;&nbsp;content.innerHTML = array.join('');
+                
+                }
 
-            </pre>
+              </pre>
             </div>
+            
             <!-- stars container -->
             <h3>JsRank</h3>
             <div class="_stars_contain" id="_stars_ctn">
