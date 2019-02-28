@@ -1,9 +1,9 @@
-import { UpperCaseFirstLetterEachWord, Tableau, persistStorage, getLocalStorage, Reducer } from './utils.js';
+import { UpperCaseFirstLetterEachWord, Tableau, persistStorage, getLocalStorage, Reducer, idSelector } from './utils.js';
 import { UsCity, UsCityData, Clothings } from './data.js';
 
 let content;
 // Afficher une ville précise
-export const OneCity = (city) => {
+export const OneCity = city => {
 
     // Traiter le texte saisi
     const value = UpperCaseFirstLetterEachWord(city.toLowerCase());
@@ -32,7 +32,7 @@ export const ClearCities = () => {
 
 
 // Afficher liste des villes selon la population
-export const MostPopulateCities = (value) => {
+export const MostPopulateCities = value => {
    
     let city; // conteneur villes
 
@@ -40,7 +40,7 @@ export const MostPopulateCities = (value) => {
    
     const arr = value.trim().split(','); // convert to array
 
-    table.classList.add('_show_arrpop');
+    table.classList.add('_show_arrpop'); // ajout effet de fondu.
 
     switch (arr.length){
         case 1 :
@@ -112,7 +112,7 @@ export const AddToCart = (idProduct, nameStore) => {
 
 // Calculer le panier
 
-export const SumCart = (item) => {
+export const SumCart = item => {
 
     const price = getLocalStorage(item).map(({ price }) => price);
 
@@ -122,3 +122,59 @@ export const SumCart = (item) => {
 }
 
 
+// afficher les étoiles 
+
+export const displayStars = ( i = 0 ) => {
+
+    const stars = '<span><i class="far fa-star fa-3x"></i></span>'; // étoile vide
+    
+    const arrStars = [...Array(5)].fill(stars);
+
+    content = idSelector('_stars_ctn');
+    
+     i === 0 ? (content.innerHTML = arrStars.join('')) : fillStars(i, arrStars) ;
+
+     initStars();
+
+}
+
+// 
+
+/**
+ * @desc Afficher les étoiles selon la notation.
+ * @param {number} i - index du tableau, signifiant la position de l'étoile
+ * @param { array } arrStars - Contient le tableau précedent.
+ */
+export const fillStars = ( i, array ) => {
+
+    const fullStars = '<span><i class="fas fa-star fa-3x"></i></span>';
+
+    array.fill(fullStars,0, i )
+
+    content.innerHTML = array.join('');
+
+}
+
+
+/**
+ * @description - initialiser les events sur les étoiles.
+ */
+
+const initStars = () => {
+    
+    const stars = document.querySelectorAll('.fa-star');
+
+    [...stars].map((el, i) => el.addEventListener('click', () => displayStars(i + 1)));
+};
+
+
+// click event 
+export const clickEvent = e => {
+
+    const { target: { dataset } } = e;
+
+    if(dataset.id)
+
+    return AddToCart(dataset.id, 'cart');
+
+}
