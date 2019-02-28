@@ -16,7 +16,7 @@
     </header>
 
     <main>
-      <h1>Array Methods Tutorial</h1>
+      <h1>Array Methods Tutorial<small>(...under build)</small></h1>
         <p class="_text">
           Les principales méthodes utilisées pour exploiter un Array en
           javascript. Prenons en exemple un tableau contenant des noms de villes
@@ -32,7 +32,7 @@
           <div class="_text">
           <h3>Afficher toutes les Villes</h3>
           <h4>Que fait array.map ?</h4>
-          <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement<p>
+          <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement.<p>
 
           <!-- exemple de code -->
           <div class="_code_ex">
@@ -41,10 +41,28 @@
             const UsCity = [ "New York", "Miami", "Los Angeles", "Chicago", "Washington"]; // Tableau city
             </pre>
           </div>
+          <div class="_code_ex">
+            <p>A présent nous souhaitons afficher la liste des villes dans notre document.</p>
+            <p>Pour ce faire nous déclarons une fonction nommée AllCities qui aura en son corps les instructions suivantes :</p>
+            <ul>
+              <li><em>Séléctionner l'élément ayant le id</em> -_allcity- <em>qui contiendra notre liste et le stocker dans la variable</em> -content- .</li>
+              <li>Lorsque la fonction est invoquée, la variable content est vidée de son contenu html.</li>
+            </ul>
+            <pre>
+              const AllCities = () => {
+
+              &nbsp;&nbsp; let content = document.querySelector("#_all_cities");
+        
+              &nbsp;&nbsp; content.innerHTML = "";
+              
+              &nbsp;&nbsp; UsCity.map( el => content.innerHTML += `&lt;li>${el}&lt;/li>` );
+              };
+            </pre>
+          </div>
 
           <button id="_cities_btn">Afficher villes</button>
           <button id="_cities_clear">clear</button>
-          <ul id="_allCity" class="_result"></ul>
+          <ul id="_all_cities" class="_result"></ul>
           </div>
 
         </section>
@@ -160,8 +178,8 @@
               <p>Une fois ceci fait, lorsque l'on cliquera sur une des 5 étoiles, la fonction fillStars remplira le tableau selon la position cliquée.</p>
               <p>Les arguments à transmettre à notre fonction :</p>
               <ul>
-                  <li>- <em>i</em> correspond à l'index de notre array arrStars lors du clic</li>
-                  <li>- <em>array</em> correspond à notre array arrayStars</li>
+                  <li>-i- <em>correspond à l'index de notre array arrStars lors du clic</em></li>
+                  <li>-array- <em>correspond à notre array arrayStars</em></li>
               </ul>
               <p>Cette dernière créée d'abord notre étoile</i>.</p>
               <pre>
