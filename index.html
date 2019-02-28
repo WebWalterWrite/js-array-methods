@@ -28,9 +28,11 @@
 <!-- Array.map -->
         <section>
           <div class="_fn">
-          <h2>Array.map</h2>
+          <h2 class="_array_title">Array.map</h2>
+          <div class="_text">
           <h3>Afficher toutes les Villes</h3>
-          <p class="_text">Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement</p>
+          <p>Retourne un nouvel array traité par notre fonction passée en callback. Idéalement utilisé pour lire chaque entrée d'un tableau et y effectuer un traitement</p>
+          </div>
           <button id="_cities_btn">Afficher villes</button>
           <button id="_cities_clear">clear</button>
           <ul id="_allCity" class="_result"></ul>
@@ -42,10 +44,11 @@
 <!-- Array.find -->
         <section>
 
-            <h2>Array.find</h2>
+            <h2 class="_array_title">Array.find</h2>
+            <div class="_text">
             <h3>Afficher une ville précise</h3>
-            <p class="_text">Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
-            
+            <p>Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
+            </div>
             <input name="city" type="text" placeholder="city name" value="" />
             
             <button id="_city_btn">afficher</button>
@@ -57,9 +60,11 @@
 <!-- Array.filter -->
         <section>
     
-            <h2>Array.filter</h2>
+            <h2 class="_array_title">Array.filter</h2>
+            <div class="_text">
             <h3>Filtrer les villes par population</h3>
-            <p class="_text">Retourne un nouveau tableau contenant les éléments filtrés. On utilise généralement des opérateurs d'égalités</p>
+            <p>Retourne un nouveau tableau contenant les éléments filtrés. On utilise généralement des opérateurs d'égalités</p>
+            </div>
             <div class="_choice">
               <!-- ville jusqu'à 500.000 -->
               <div data-int="500000" class="_city_data">
@@ -90,13 +95,14 @@
 
 <!-- Array reduce -->
           <section>
-              <h2>Array.reduce</h2>
+              <h2 class="_array_title">Array.reduce</h2>
+              <div class="_text">
               <h3>Calculer un panier d'achat</h3>
-              <p class="_text">Selon le site MDN la méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.</p>
-              <p class="_text">Pour notre exemple, nous achetons nos vêtements en ligne et nous les ajoutons à notre panier,
+              <p>Selon le site MDN la méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.</p>
+              <p>Pour notre exemple, nous achetons nos vêtements en ligne et nous les ajoutons à notre panier,
                 en tant que développeur Javascript notre monnaie utilisée sera du JsCoin --J$--
               </p>
-           
+              </div>
               <div>
                 <h3>Articles</h3>
                 <!-- contains clothes -->
@@ -125,9 +131,48 @@
                   <div id="_cart_content" class="_cart"></div>
 
                 </div>
-
           </section>
 
+<!-- array.fill -->
+          <section>
+            <h2 class="_array_title">Array.fill</h2>
+            <h3>Classement Rank Stars</h3>
+            <div class="_text">
+            <p>Cette méthode permet de modifier intégralement ou partiellement les entrées d'un  tableau</p>
+            <h4>Voyons de plus près la syntaxe :</h4>
+            <p>Pour l'exemple nous souhaitons donner une note entre et 1 et 5 étoiles à notre langage préféré qui est le Javascript</p>
+            <p>je crée dans un 1er temps un tableau contenant notre . ( Pour ce faire j'utilise FontAwesome)</p>
+            <pre>
+              const stars = '&lt;span>&lt;i class="far fa-star fa-3x"></i>&lt;/span>';
+
+              const arrStars = [...Array(5)].fill(stars); 
+            </pre> 
+            <p>Une fois ceci fait, lorsque l'on cliquera sur une des 5 étoiles, la fonction fillStars remplira le tableau selon la position cliquée.</p>
+            <ul>
+              Les arguments à transmettre à notre fonction :
+                <li>- i correspond à l'index de notre array arrStars lors du clic</li>
+                <li>- array correspond à notre array arrayStars</li>
+            </ul>
+            <p>Cette dernière créée d'abord notre étoile</i>.</p>
+            <pre>
+              const fillStars = ( i, array ) => {
+              
+              &nbsp;&nbsp;const fullStars = '&lt;span>&lt;i class="fas fa-star fa-3x">&lt;/i></span>';
+              
+              &nbsp;&nbsp;array.fill(fullStars,0, i )
+              
+              &nbsp;&nbsp;content.innerHTML = array.join('');
+              
+              }
+
+            </pre>
+            </div>
+            <!-- stars container -->
+            <h3>JsRank</h3>
+            <div class="_stars_contain" id="_stars_ctn">
+
+            </div>
+          </section>
     </div>
     </main>
     <script src="./js/index.js" type="module"></script>
