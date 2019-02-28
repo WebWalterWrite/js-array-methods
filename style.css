@@ -26,8 +26,11 @@ button{
 }
 
 body {
-  background-color: #282C34;
   padding: 10px;
+  background: url('./desk.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 main>h1{
@@ -43,24 +46,25 @@ section {
   position :relative;
   width: 60%;
   margin: 1em 0 1em 0;
-  border: solid 2px white;
+  border: solid 2px #eb612b;
   border-radius:13px;
   padding: 1em;
+  background-color:rgba(244, 244, 244, 0.9);
+  
 }
 
 
 h1,h2,h3,p{
   margin:1em 0 1em 0;
+  color:#FFFFFF;
 }
 h1 {
-  color: #ffffff;
   text-align: center;
 }
 h2{
   background-color:#eb612b;
-  color:#FFFFFF;
   text-align:center;
-  width:15%;
+  width:18%;
   padding:.1em;
   position:absolute;
   top:-40px;
@@ -77,23 +81,39 @@ pre{
   background-color: #F2F2F2;
   width:90%;
   margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding:10px;
   font-size:16px;
   white-space: pre-line;
+  color: #000000;
 }
-
+/* code exemple*/
+._text ._code_ex{
+  background-color:#eb612b;
+  padding:10px;
+  margin: 10px 0 10px 0;
+  border-radius: 8px;
+} 
+._text ._code_ex p{
+  color:#FFFFFF;
+}
+/* error */
+._text ._error{
+  color:red;
+}
 ._result{
   color:#54b7ec;
 }
 ._text p, ul {
   /* color: #72db83; */
-  color: #FFFFFF;
   font-size: 1em;
+  color:#31363E;
 }
 
 
 button {
-  background-color: #54b7ec;
+  background-color: #eb612b;
   padding: 0.5em;
   font-size: 0.8em;
   color: #ffffff; 
@@ -101,8 +121,9 @@ button {
 }
 
 input {
-  padding: 0.5em;
+  padding: 0.4em;
   font-size: 0.8em;
+  outline: none;
 }
 
 ._choice {
@@ -118,9 +139,10 @@ input {
   text-align:center;
   padding: 4px;
   border-radius:13px;
-  background-color: #54b7ec;
+  background-color: #EFD71B;
   color:#FFFFFF;
   font-size:18px;
+  font-weight: bold;
   width:20%;
   cursor: pointer;
 }
@@ -137,7 +159,7 @@ style tableau
 */
 table {
     border-collapse: collapse;
-    border: 2px solid #FFFFFF;
+    border: 2px solid #000000;
     letter-spacing: 1px;
     font-size: 1.5rem;
     width:100%;
@@ -149,11 +171,11 @@ thead{
   background-color: #FFFFFF;
 }
 thead>tr td{
-border: 1px solid #54b7ec;
+border: 1px solid #000000;
 }
 td,
 th {
-    border: 1px solid #FFFFFF;
+    border: 1px solid #000000;
     padding: 5px 10px;
 }
 tbody tr>td{
@@ -252,8 +274,7 @@ affichage tableau
   color: #EFD71B;
   display:flex;
   align-items:center;
-  border: solid 2px #FFFFFF;
-  border-bottom-color: #EFD71B;
+  border: solid 2px #EFD71B;
   padding:30px;
   text-align: center;
   border-radius: 0px 0px 13px 13px;
@@ -285,19 +306,20 @@ affichage tableau
   text-align:center;
   border-radius:13px 13px 0 0;
   background-color:#EFD71B;
-  color:#000000;
+  color:#FFFFFF;
   font-weight:bold;
   margin-bottom:2px;
 }
 ._cart_total div{
-  border: solid 2px #FFFFFF;
+  border: solid 2px #EFD71B;
   border-radius: 0 0 13px 13px;
+  background-color:#FFFFFF;
+  color:#000000;
   padding:3px;
   font-size:1rem;
-  color:#FFFFFF;
+  height: 32px;
 }
 ._cart{
-  color:#FFFFFF;
   text-align:center;
   width:80%;
   height: 66px;  
@@ -315,8 +337,9 @@ affichage tableau
 /* Array fill */
 
 ._stars_contain{
-
+  padding:10px;
   text-align: center;
+  background-color: #FFFFFF;
 }
 
 .fa-star{
