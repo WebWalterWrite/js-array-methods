@@ -35,6 +35,10 @@ body {
 
 main>h1{
   font-size:3em;
+  color:#000000;;
+  background-color: #EFD71B;
+  width:50%;
+  margin: 0 auto;
 }
 ._section{
  display:flex;
@@ -50,7 +54,6 @@ section {
   border-radius:13px;
   padding: 1em;
   background-color:rgba(244, 244, 244, 0.9);
-  
 }
 
 
@@ -60,6 +63,9 @@ h1,h2,h3,p{
 }
 h1 {
   text-align: center;
+}
+small{
+  font-size:18px;
 }
 h2{
   background-color:#eb612b;
@@ -148,8 +154,7 @@ input {
 }
 
 li {
-  list-style-type: none;
-  font-size:22px;
+  font-size:16px;
 }
 
 
