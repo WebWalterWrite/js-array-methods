@@ -1,5 +1,6 @@
-import { OneCity, AllCities, ClearCities, MostPopulateCities, AllClothes, AddToCart, SumCart, displayStars, clickEvent } from './fn.js';
+import { AllCities, ClearCities, FindBrand, MostPopulateCities, AllClothes, AddToCart, SumCart, displayStars, clickEvent } from './fn.js';
 import { idSelector } from './utils.js';
+import { findExemple } from './data.js';
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -9,14 +10,15 @@ window.addEventListener("DOMContentLoaded", () => {
   const cities_clear_btn = idSelector("_cities_clear");
   const clothing_contains = idSelector('_clothing')
   const city_btn = idSelector("_city_btn");
-  const city_input = document.querySelector('input[name="city"]');
+  const brand_input = document.querySelector('input[name="brand"]');
   const city_data = document.querySelectorAll('._city_data');
   const cart_total_btn = idSelector('_btn_total_cart');
+  const find_code = idSelector('_find_ex');
 
   cities_btn.addEventListener('click', () => AllCities());
   cities_clear_btn.addEventListener('click', () => ClearCities());
 
-  city_btn.addEventListener('click', () => OneCity(city_input.value));
+  city_btn.addEventListener('click', () => FindBrand(brand_input.value));
   
   
   [...city_data].map(el => el.addEventListener('click', () => MostPopulateCities(el.dataset.int)));
@@ -29,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
     ARRAY REDUCE
   */
   clothing_contains.innerHTML= AllClothes();
+  find_code.innerHTML = findExemple;
 
   cart_total_btn.addEventListener('click', () => SumCart('cart') );
 
