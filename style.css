@@ -28,7 +28,7 @@ button{
 body {
   padding: 10px;
   background: url('./desk.jpg') no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-attachment: fixed;
 }
@@ -44,6 +44,7 @@ main>h1{
  display:flex;
  flex-direction: column;
  align-items:center;
+ margin-top:40px;
 }
 
 section {
@@ -84,26 +85,41 @@ h3, h4 {
 }
 
 pre{
-  background-color: #F2F2F2;
+  background-color: #222222;
   width:90%;
   margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding:10px;
-  font-size:16px;
+  font-size:14px;
   white-space: pre-line;
-  color: #000000;
+  color: #FFFFFF;
+}
+
+.arrow{
+  color: rgb(145, 145, 145);
+  display: inline-block;
+  font-size: 11px;
+  margin-right: 3px;
+  user-select: none;
+}
+._right{
+  transform: rotateZ(0deg);
+}
+._down{
+  transform: rotateZ(90deg);
 }
 /* code exemple*/
 ._text ._code_ex{
   background-color:#eb612b;
   padding:10px;
-  margin: 10px 0 10px 0;
+  margin: 30px 0 10px 0;
   border-radius: 8px;
 } 
 ._text ._code_ex p{
   color:#FFFFFF;
 }
+
 /* error */
 ._text ._error{
   color:red;
@@ -111,13 +127,27 @@ pre{
 ._result{
   color:#54b7ec;
 }
-._text p, ul {
+._text p{
   /* color: #72db83; */
   font-size: 1em;
   color:#31363E;
 }
 
+/**
+Render code
+**/
 
+._render{
+  text-align: center;
+  border: solid 2px #eb612b;
+  border-radius: 8px;
+  
+}
+
+._render li{
+  list-style: none;
+  color: #eb612b;
+}
 button {
   background-color: #eb612b;
   padding: 0.5em;
@@ -155,6 +185,7 @@ input {
 
 li {
   font-size:16px;
+  color: #FFFFFF;
 }
 
 
