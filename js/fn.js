@@ -1,23 +1,31 @@
 import { UpperCaseFirstLetterEachWord, Tableau, persistStorage, getLocalStorage, Reducer, idSelector } from './utils.js';
-import { UsCity, UsCityData, Clothings } from './data.js';
+import { UsCity, UsCityData, Clothings, Sneakers } from './data.js';
 
 let content;
-// Afficher une ville précise
-export const OneCity = city => {
+/**
+ * @description - Afficher le nom d'une ville présente dans une liste
+ * @param {string} city - Contient la valeur du champ
+ * @returns {string} - retourne un message d'erreur ou le nom de la ville
+ */
+
+export const FindBrand = brand => {
+    
     content = document.querySelector("#_oneCity");
 
-    if(city === "") return content.innerHTML='<p class="_error">Vous n\'avez rien saisi</p>';
+    if(brand === "") return content.innerHTML='<p class="_error">Vous n\'avez rien saisi</p>';
     
     // Traiter le texte saisi
-    const value = UpperCaseFirstLetterEachWord(city.toLowerCase());
+    const value = UpperCaseFirstLetterEachWord(brand.toLowerCase());
 
-    const result = UsCity.find(el => el === value);
+    const result = Sneakers.find(el => el.brand === value);
 
-    content.innerHTML = result ? `La ville de ${result} est dans le Array` : `${city} n'est pas dans le Array`;
+    content.innerHTML = result ? `La marque ${value} est dans le Array` : `${value} n'est pas dans le Array`;
 };
 
-// Afficher liste de toutes les villes
 
+/**
+ * @description - Retourne une liste de villes
+ */
 export const AllCities = () => {
         content = idSelector("_all_cities");
 
@@ -36,7 +44,10 @@ export const ClearCities = () => {
 
 
 
-// Afficher liste des villes selon la population
+/**
+ *  @des -  Afficher liste des villes selon la population
+ *  @param {string} - contient la valeur du dataset html
+ * */
 export const MostPopulateCities = value => {
    
     let city; // conteneur villes
@@ -73,7 +84,10 @@ export const MostPopulateCities = value => {
 };
 
 
-// afficher la liste de vêtements.
+/**
+ * @desc - Retourne des éléments HTML.
+ */
+
 export const AllClothes = () => (
 
      Clothings.map( ({product, price, name, id})=>(
@@ -93,7 +107,11 @@ export const AllClothes = () => (
 );
 
 
-// ajouter au panier
+/**
+ * @desc - 
+ * @param {*} idProduct 
+ * @param {*} nameStore 
+ */
 
 export const AddToCart = (idProduct, nameStore) => {
 
@@ -115,7 +133,11 @@ export const AddToCart = (idProduct, nameStore) => {
     cartCount.textContent= totalCart.length;
 }
 
-// Calculer le panier
+/**
+ * @desc - Calcul le montant des artciles sotckés dans le local storage.
+ * @param {string} item - Le nom du local storage.
+ * @returns {string} - retourne la somme totale
+ */
 
 export const SumCart = item => {
 
@@ -127,11 +149,14 @@ export const SumCart = item => {
 }
 
 
-// afficher les étoiles 
+/**
+ * @desc - Affiche le nombre d'étoiles par défault 5 || le nombre d'étoiles sélectionnées
+ * @param {integer} i - la position de l'étoile
+ */ 
 
 export const displayStars = ( i = 0 ) => {
 
-    const stars = '<span><i class="far fa-star fa-3x"></i></span>'; // étoile vide
+    let stars = '<span><i class="far fa-star fa-3x"></i></span>'; // étoile vide
     
     const arrStars = [...Array(5)].fill(stars);
 
@@ -141,7 +166,7 @@ export const displayStars = ( i = 0 ) => {
         ? (content.innerHTML = arrStars.join('')) 
         : content.innerHTML = fillStars(i, arrStars) ;
 
-     initStars();
+    initStars();
 
 }
 
@@ -154,7 +179,7 @@ export const displayStars = ( i = 0 ) => {
  */
 export const fillStars = ( i, array ) => {
 
-    const fullStars = '<span><i class="fas fa-star fa-3x"></i></span>';
+    let fullStars = '<span><i class="fas fa-star fa-3x"></i></span>';
 
     return array.fill(fullStars,0, i ).join('');
 
