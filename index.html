@@ -17,11 +17,6 @@
 
     <main>
       <h1>Array Methods Tutorial<small>(...under build)</small></h1>
-        <p class="_text">
-          Les principales méthodes utilisées pour exploiter un Array en
-          javascript. Prenons en exemple un tableau contenant des noms de villes
-          US.
-        </p>
 
     <div class="_section">
 
@@ -36,9 +31,9 @@
 
           <!-- exemple de code -->
           <div class="_code_ex">
-            <p>Prenons en exemple, nous récupérons depuis une api ou notre base de données une liste de villes sous forme de tabeau</p>
+            <p>Prenons en exemple, nous récupérons depuis une api ou notre base de données une liste de villes sous forme de tableau</p>
             <pre>
-            const UsCity = [ "New York", "Miami", "Los Angeles", "Chicago", "Washington"]; // Tableau city
+                  const UsCity = [ "New York", "Miami", "Los Angeles", "Chicago", "Washington"]; // Tableau city
             </pre>
           </div>
           <div class="_code_ex">
@@ -60,9 +55,12 @@
             </pre>
           </div>
 
-          <button id="_cities_btn">Afficher villes</button>
-          <button id="_cities_clear">clear</button>
-          <ul id="_all_cities" class="_result"></ul>
+          <h4>Testons le code</h4>
+          <div class="_render">
+            <button id="_cities_btn">Afficher villes</button>
+            <button id="_cities_clear">clear</button>
+            <ul id="_all_cities" class="_result"></ul>
+          </div>
           </div>
 
         </section>
@@ -75,8 +73,27 @@
             <div class="_text">
             <h3>Afficher une ville précise</h3>
             <p>Retourne la valeur de la 1ère occurence rencontrée dans le tableau. De ce fait cette méthode ne permet pas de retourner plusieurs valeurs, la méthode suivante array.filter sera plus appropriée.</p>
-
-            <input name="city" type="text" placeholder="city name" value="" />
+            <div class="_code_ex">
+            <p>Prenons le même exemple que la méthode Array.map ci-dessus avec notre liste de villes sous forme de
+              tabeau</p>
+              <pre id="_find_ex">
+              </pre>
+            </div>
+            <div class="_code_ex">
+              <p>Prenons en exemple un tableau contenant des baskets de sport, issu de votre base de données ou d'une API .</p>
+              <p>Pour ce faire nous déclarons une fonction nommée FindBrand qui aura en son corps les instructions suivantes :</p>
+              <pre>
+                          const FindBrand = brand => {
+            
+                          &nbsp;&nbsp; let content = document.querySelector("#_oneCity");;
+                    
+                          &nbsp;&nbsp; const result = Sneakers.find(el => el.brand === brand);
+                          
+                          &nbsp;&nbsp; content.innerHTML = result ? `La ville de ${brand} est dans le Array` : `${brand} n'est pas dans le Array`;
+                          };
+              </pre>
+            </div>
+            <input name="brand" type="text" placeholder="city name" value="" />
             
             <button id="_city_btn">afficher</button>
             <p id="_oneCity"></p>
@@ -91,6 +108,65 @@
             <div class="_text">
             <h3>Filtrer les villes par population</h3>
             <p>Retourne un nouveau tableau contenant les éléments filtrés. On utilise généralement des opérateurs d'égalités</p>
+            <!-- code format -->
+            <div class="_code_ex">
+              <p>Prenons en exemple, nous récupérons depuis une api ou notre base de données une liste de villes sous forme de
+                tabeau d'objets. Ces objets contiennent des données representées comme ci-dessous.</p>
+              <pre>
+                  const UsCityData = [
+                  &nbsp;{
+                  &nbsp;&nbsp;city: "New York",
+                  &nbsp;&nbsp;population: 8622698
+                  &nbsp;},
+                  &nbsp;{
+                  &nbsp;&nbsp;city: "Miami",
+                  &nbsp;&nbsp;population: 463347
+                  &nbsp;},
+                  &nbsp;{
+                  &nbsp;&nbsp;city: "Los Angeles",
+                  &nbsp;&nbsp;population: 3999759
+                  &nbsp;},
+                  &nbsp;{
+                  &nbsp;&nbsp;city: "Chicago",
+                  &nbsp;&nbsp;population: 2716450
+                  &nbsp;},
+                  &nbsp;{
+                  &nbsp;&nbsp;city: "Washington",
+                  &nbsp;&nbsp;population: 693972
+                  &nbsp;}
+                  ];
+              </pre>
+
+              <p>Nous souhaitons obtenir une liste de ville ayant une population inférieure à 800000.</p>
+              <pre>
+                  const result = data => data.filter( ({population}) => population < 800000);
+
+                  const result = (arr, data ) => arr.filter( el => el[data] > 800000);
+
+                  result(UsCityData, "population"));
+              </pre>
+
+              <p> Si nous invoquons la fonction result depuis la console.
+              <pre>
+                console.log(result(UsCityData))
+              </pre>
+                <p>Celle-ci nous retournera un tableau contenant nos données sous forme d'objets.</p>
+              <pre>
+
+                  <span class="arrow _right">▶</span>[Object, Object]
+                  &nbsp;&nbsp;<span class="arrow _down">▶</span> 0: Object
+                  &nbsp;&nbsp;&nbsp;&nbsp;  city: "Miami"
+                  &nbsp;&nbsp;&nbsp;&nbsp;  population: 463347
+                  &nbsp;&nbsp;<span class="arrow _down">▶</span> 1: Object
+                  &nbsp;&nbsp;&nbsp;&nbsp;  city: "Washington"
+                  &nbsp;&nbsp;&nbsp;&nbsp;  population: 693972
+              </pre>
+              <pre>
+                  const cities = result(UsCityData).map( ({city}) => city);
+
+                  console.log(cities) // ["Miami", "Washington"];
+              </pre>
+            </div>
             </div>
             <div class="_choice">
               <!-- ville jusqu'à 500.000 -->
