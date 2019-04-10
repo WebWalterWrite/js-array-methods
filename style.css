@@ -125,7 +125,10 @@ pre{
   color:red;
 }
 ._result{
-  color:#54b7ec;
+
+  color:#eb612b;
+  text-align: center;
+  padding: 0;
 }
 ._text p{
   /* color: #72db83; */
@@ -141,7 +144,6 @@ Render code
   text-align: center;
   border: solid 2px #eb612b;
   border-radius: 8px;
-  
 }
 
 ._render li{
@@ -161,11 +163,28 @@ input {
   font-size: 0.8em;
   outline: none;
 }
+/**
+ARRAY FIND
+**/
+._shoes_brand{
+  display:flex;
+  justify-content: space-around;
+  margin:0;
+  padding: 8px;
+}
 
+._shoes_desc p{
+  margin: 3px !important;
+  font-weight: 900;
+}
+/**
+END ARRAY FIND
+**/
 ._choice {
   display: flex;
   justify-content: space-between;
   margin: 1em 0 1em 0;
+  padding: 1em;
 }
 
 ._city_data {
@@ -231,6 +250,7 @@ affichage tableau
 */
 ._arrpop{
   opacity:0;
+  padding: 1em;
 }
 
 ._show_arrpop {
@@ -376,6 +396,7 @@ affichage tableau
   padding:10px;
   text-align: center;
   background-color: #FFFFFF;
+  border-radius: 8px;
 }
 
 .fa-star{
