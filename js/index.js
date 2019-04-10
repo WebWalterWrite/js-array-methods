@@ -1,6 +1,6 @@
-import { AllCities, ClearCities, FindBrand, MostPopulateCities, AllClothes, AddToCart, SumCart, displayStars, clickEvent } from './fn.js';
+import { AllCities, ClearCities, FindBrand, MostPopulateCities, AddToCart, SumCart, displayStars, clickEvent } from './fn.js';
 import { idSelector } from './utils.js';
-import { findExemple } from './data.js';
+import { AllClothes, findExemple } from './components.js';
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const find_code = idSelector('_find_ex');
 
   cities_btn.addEventListener('click', () => AllCities());
-  cities_clear_btn.addEventListener('click', () => ClearCities());
+  cities_clear_btn.addEventListener('click', () => ClearCities("_all_cities"));
 
   city_btn.addEventListener('click', () => FindBrand(brand_input.value));
   
