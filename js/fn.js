@@ -1,5 +1,6 @@
 import { UpperCaseFirstLetterEachWord, Tableau, persistStorage, getLocalStorage, Reducer, idSelector } from './utils.js';
-import { UsCity, UsCityData, Clothings, Sneakers } from './data.js';
+import { UsCity, UsCityData, Sneakers, Clothings } from './data.js';
+import { DisplaySneaker } from './components.js';
 
 let content;
 /**
@@ -10,16 +11,16 @@ let content;
 
 export const FindBrand = brand => {
     
-    content = document.querySelector("#_oneCity");
+    content = document.querySelector("#_brand_shoes");
 
     if(brand === "") return content.innerHTML='<p class="_error">Vous n\'avez rien saisi</p>';
     
     // Traiter le texte saisi
     const value = UpperCaseFirstLetterEachWord(brand.toLowerCase());
 
-    const result = Sneakers.find(el => el.brand === value);
-
-    content.innerHTML = result ? `La marque ${value} est dans le Array` : `${value} n'est pas dans le Array`;
+    const { data= false } = Sneakers.find(el => el.brand === value) || {};
+ 
+    content.innerHTML = data ? DisplaySneaker(data) : `${value} n'est pas disponible`;
 };
 
 
@@ -27,6 +28,7 @@ export const FindBrand = brand => {
  * @description - Retourne une liste de villes
  */
 export const AllCities = () => {
+
         content = idSelector("_all_cities");
 
         content.innerHTML = "";
@@ -36,9 +38,11 @@ export const AllCities = () => {
         UsCity.map(fillContent);
     };
 
-// Effacer la liste des villes
-export const ClearCities = () => {
-    content = idSelector("_all_cities");
+/**
+ * @desc - Effacer le contenu 
+ */
+export const ClearCities = (id) => {
+    content = idSelector(id);
     content.innerHTML = "";
 };
 
@@ -83,28 +87,6 @@ export const MostPopulateCities = value => {
     return table.innerHTML=Tableau(city);
 };
 
-
-/**
- * @desc - Retourne des éléments HTML.
- */
-
-export const AllClothes = () => (
-
-     Clothings.map( ({product, price, name, id})=>(
-    `
-<div>
-    <div class="_product">
-        <p>${name}</p>
-        <div>
-            <span class="_emoji" role="img" aria-label=${name}>${product}</span>
-        </div>
-        <p>${price} J$</p>
-    </div>
-    <button data-id=${id} class="_add_cart">add to cart</button>
-</div>   
-        `
-     )).join('')
-);
 
 
 /**
