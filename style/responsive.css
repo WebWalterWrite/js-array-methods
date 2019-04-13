@@ -1,0 +1,51 @@
+/**
+ Mobile 
+ **/
+@media screen and (max-width: 414px) {
+    header img{
+        width:50px;
+    }
+    ._text p{
+        font-size: 18px;
+    }
+    h1{
+        font-size:1.5em;
+    }
+    section {
+      width: 90%;
+    }
+    pre{
+        word-wrap: break-word;
+    }
+    h2._array_title{
+        width: 50%;
+        left: 5%;
+    }
+/* array find */
+    ._shoes_brand{
+        display: block;
+    }
+/* array.filter */
+    ._choice{
+        flex-wrap: wrap;
+    }
+    ._city_data{
+        width: 40%;
+        margin:10px;
+    }
+    ._clothing{
+        flex-wrap: wrap;
+    }
+    ._clothing>div{
+        width:30%;
+        margin: 0 auto;
+    }
+    ._product div{
+        padding:0px;
+    }
+/* Array.fill */
+    .fa-3x{
+        font-size: 2em !important;
+    }
+
+  }
