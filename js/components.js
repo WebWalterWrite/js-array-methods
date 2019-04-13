@@ -46,7 +46,7 @@ export const DisplaySneaker = data => data.map( ({name, picture, price}) =>(
         </div>
       </div>  
     `
-));
+)).join('');
 
 
 /**
