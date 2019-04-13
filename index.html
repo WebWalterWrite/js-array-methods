@@ -7,17 +7,19 @@
   <link rel="icon" href="ea-logo.png" type="image/png" />
   <title>ArrayMethods by EA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./style/style.css" />  
+  <link rel="stylesheet" href="./style/responsive.css" />
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 </head>
 <header>
-  <img src="./ea-logo.png" alt="logo blog" width="100" />
+  <img src="./ea-logo.png" alt="logo blog" width="100px" />
+  <h1>Array Methods Tutorial</h1>
 </header>
 
 <main>
-  <h1>Array Methods Tutorial<small>(...under build)</small></h1>
 
   <div class="_section">
 
@@ -38,7 +40,7 @@
               <p>Prenons en exemple, nous récupérons depuis une api ou notre base de données une liste de villes sous
                 forme de tableau</p>
               <pre>
-                  const UsCity = [ "New York", "Miami", "Los Angeles", "Chicago", "Washington"]; // Tableau city
+                  const UsCity = [ "New York", "Miami", "Los Angeles", "Chicago", "Washington"];
             </pre>
             </div>
             <div class="_code_ex">
@@ -98,7 +100,7 @@
                           
                           const FindBrand = brand => {
             
-                          &nbsp;&nbsp; let content = document.querySelector("#_oneCity");;
+                          &nbsp;&nbsp; let content = document.querySelector("#_oneCity");
                     
                           &nbsp;&nbsp; const { data= false } = Sneakers.find(el => el.brand === value) || {};
                           
@@ -137,6 +139,7 @@
             de
             tabeau d'objets. Ces objets contiennent des données representées comme ci-dessous.</p>
           <pre>
+              <code>
                   const UsCityData = [
                   &nbsp;{
                   &nbsp;&nbsp;city: "New York",
@@ -159,6 +162,7 @@
                   &nbsp;&nbsp;population: 693972
                   &nbsp;}
                   ];
+                </code>
               </pre>
 
           <p>Nous souhaitons obtenir une liste de ville ayant une population inférieure à 800000.</p>
